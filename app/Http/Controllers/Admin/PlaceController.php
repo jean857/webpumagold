@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Place;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class PlaceController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.places-general.index');
     }
 
     /**
@@ -55,9 +56,9 @@ class PlaceController extends Controller
      * @param  \App\Models\Place  $place
      * @return \Illuminate\Http\Response
      */
-    public function edit(Place $place)
+    public function edit(Place $place,$id)
     {
-        //
+        return view('admin.places-general.edit',compact('id'));
     }
 
     /**

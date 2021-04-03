@@ -187,7 +187,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => '',
@@ -232,15 +232,10 @@ return [
         ],
         [
             'text' => 'Contáctanos',
-            'url'  => '#',
+            'route'  => 'contact-us-general.index',
             'icon' => '',
         ],
 
-        [
-            'text' => 'Contáctanos',
-            'url'  => '#',
-            'icon' => '',
-        ],
         ['header' => 'SERVICIOS'],
         [
             'text' => 'Categoria',
@@ -263,6 +258,11 @@ return [
                 ],
             ],
         ],
+        [
+            'text' => 'Contáctanos',
+            'url'  => '#',
+            'icon' => '',
+        ],
         ['header' => 'AJUSTES DE LA CUENTA'],
         [
             'text' => 'profile',
@@ -274,6 +274,7 @@ return [
             'url'  => '#',
             'icon' => 'fas fa-fw fa-lock',
         ],
+
     ],
 
     /*
@@ -394,5 +395,5 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Other-Configuration
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
