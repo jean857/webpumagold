@@ -9,7 +9,7 @@
                     <label for="address">Dirección</label>
                     <input type="text" class="form-control" id="address" name="address"
                            placeholder="Dirección" wire:model="address">
-                    @error('address') <span class="error">{{ $message }}</span> @enderror
+                    @error('address') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
             </div>
             <div class="col-md-6">

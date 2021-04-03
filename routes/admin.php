@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PlaceController;
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index']);
+
+//Contactanos general
 Route::get('/contact-us-general', [PlaceController::class, 'index'])->name('contact-us-general.index');
 Route::get('/contact-us-general/{id}/edit', [PlaceController::class, 'edit'])->name('contact-us-general.edit');
 
-//Rutas de administrador
+//Categorias de servicios
+Route::resource('/categories', CategoryController::class);
 
 

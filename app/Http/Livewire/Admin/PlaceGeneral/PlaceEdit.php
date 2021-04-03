@@ -49,7 +49,7 @@ class PlaceEdit extends Component
     public function update()
     {
         $this->validate();
-        $place = Place::find($this->place_id);
+        $place = Place::findOrFail($this->place_id);
         $place->address = $this->address;
         $place->email = $this->email;
         $place->phone_number = $this->phone_number;

@@ -239,7 +239,7 @@ return [
         ['header' => 'SERVICIOS'],
         [
             'text' => 'Categoria',
-            'url'  => '#',
+            'route'  => 'categories.index',
             'icon' => '',
         ],
         [
@@ -358,11 +358,11 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
                 ],
             ],
