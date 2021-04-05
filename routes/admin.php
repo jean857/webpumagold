@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PlaceController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CompanyPrincipleController;
+use App\Http\Controllers\Admin\CertificationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,5 +30,6 @@ Route::get('/contact-us-general/{id}/edit', [PlaceController::class, 'edit'])->n
 Route::resource('/categories', CategoryController::class);
 Route::resource('/services', ServiceController::class);
 Route::resource('/company_principles', CompanyPrincipleController::class);
+Route::resource('/certifications', CertificationController::class);
 
 

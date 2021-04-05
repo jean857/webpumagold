@@ -57,7 +57,7 @@ class ServiceEdit extends Component
         $service->description = $this->description;
         if ($this->image_source != '') {
             $image_explode = explode('/', $this->image_source->store('services', 'public'));
-            $service->image_source = $image_explode[0];
+            $service->image_source = $image_explode[1];
         }
         $service->published = $this->published;
         if($service->save()){

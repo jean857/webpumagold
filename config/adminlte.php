@@ -227,7 +227,7 @@ return [
         ['header' => 'INFORMACION GENERAL'],
         [
             'text' => 'Certificaciones',
-            'url'  => '#',
+            'route'  => 'certifications.index',
             'icon' => '',
         ],
         [

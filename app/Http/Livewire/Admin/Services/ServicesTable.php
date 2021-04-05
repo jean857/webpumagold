@@ -4,7 +4,6 @@ namespace App\Http\Livewire\Admin\Services;
 
 use App\Models\Service;
 use Illuminate\Database\Eloquent\Builder;
-use Livewire\Component;
 use Rappasoft\LaravelLivewireTables\TableComponent;
 use Rappasoft\LaravelLivewireTables\Traits\HtmlComponents;
 use Rappasoft\LaravelLivewireTables\Views\Column;
