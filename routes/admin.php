@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PlaceController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,5 +26,6 @@ Route::get('/contact-us-general/{id}/edit', [PlaceController::class, 'edit'])->n
 
 //Categorias de servicios
 Route::resource('/categories', CategoryController::class);
+Route::resource('/services', ServiceController::class);
 
 
