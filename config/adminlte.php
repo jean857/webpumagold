@@ -254,7 +254,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Misión - Visión',
-                    'url'  => '#',
+                    'route'  => 'company_principles.index',
                 ],
             ],
         ],
