@@ -22,33 +22,33 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.home.index'])->syncRoles([$role_admin, $role_editor]);
 
         //Todo Creación de permisos - Contactanos
-        Permission::create(['name' => 'admin.contact-us-general.index'])->assignRole('Admin','Editor');
-        Permission::create(['name' => 'admin.contact-us-general.create'])->assignRole('Admin','Editor');
-        Permission::create(['name' => 'admin.contact-us-general.edit'])->assignRole('Admin','Editor');
+        Permission::create(['name' => 'admin.contact-us-general.index'])->syncRoles([$role_admin, $role_editor]);
+        Permission::create(['name' => 'admin.contact-us-general.create'])->syncRoles([$role_admin, $role_editor]);
+        Permission::create(['name' => 'admin.contact-us-general.edit'])->syncRoles([$role_admin, $role_editor]);
 
         //Todo Creación de permisos - Categorias
-        Permission::create(['name' => 'admin.categories.index'])->assignRole('Admin','Editor');
-        Permission::create(['name' => 'admin.categories.create'])->assignRole('Admin','Editor');
-        Permission::create(['name' => 'admin.categories.edit'])->assignRole('Admin','Editor');
+        Permission::create(['name' => 'admin.categories.index'])->syncRoles([$role_admin, $role_editor]);
+        Permission::create(['name' => 'admin.categories.create'])->syncRoles([$role_admin, $role_editor]);
+        Permission::create(['name' => 'admin.categories.edit'])->syncRoles([$role_admin, $role_editor]);
 
         //Todo Creación de permisos - Servicios
-        Permission::create(['name' => 'admin.services.index'])->assignRole('Admin','Editor');
-        Permission::create(['name' => 'admin.services.create'])->assignRole('Admin','Editor');
-        Permission::create(['name' => 'admin.services.edit'])->assignRole('Admin','Editor');
+        Permission::create(['name' => 'admin.services.index'])->syncRoles([$role_admin, $role_editor]);
+        Permission::create(['name' => 'admin.services.create'])->syncRoles([$role_admin, $role_editor]);
+        Permission::create(['name' => 'admin.services.edit'])->syncRoles([$role_admin, $role_editor]);
 
         //Todo Creación de permisos - Datos principales de la compañia
-        Permission::create(['name' => 'admin.company_principles.index'])->assignRole('Admin','Editor');
-        Permission::create(['name' => 'admin.company_principles.create'])->assignRole('Admin','Editor');
-        Permission::create(['name' => 'admin.company_principles.edit'])->assignRole('Admin','Editor');
+        Permission::create(['name' => 'admin.company_principles.index'])->syncRoles([$role_admin, $role_editor]);
+        Permission::create(['name' => 'admin.company_principles.create'])->syncRoles([$role_admin, $role_editor]);
+        Permission::create(['name' => 'admin.company_principles.edit'])->syncRoles([$role_admin, $role_editor]);
 
         //Todo Creación de permisos - Certificaciones
-        Permission::create(['name' => 'admin.certifications.index'])->assignRole('Admin','Editor');
-        Permission::create(['name' => 'admin.certifications.create'])->assignRole('Admin','Editor');
-        Permission::create(['name' => 'admin.certifications.edit'])->assignRole('Admin','Editor');
+        Permission::create(['name' => 'admin.certifications.index'])->syncRoles([$role_admin, $role_editor]);
+        Permission::create(['name' => 'admin.certifications.create'])->syncRoles([$role_admin, $role_editor]);
+        Permission::create(['name' => 'admin.certifications.edit'])->syncRoles([$role_admin, $role_editor]);
 
         //Todo Creación de permisos - Usuarios
-        Permission::create(['name' => 'admin.users.index'])->assignRole('Admin');
-        Permission::create(['name' => 'admin.users.create'])->assignRole('Admin');
-        Permission::create(['name' => 'admin.users.edit'])->assignRole('Admin');
+        Permission::create(['name' => 'admin.users.index'])->syncRoles([$role_admin]);
+        Permission::create(['name' => 'admin.users.create'])->syncRoles([$role_admin]);
+        Permission::create(['name' => 'admin.users.edit'])->syncRoles([$role_admin]);
     }
 }

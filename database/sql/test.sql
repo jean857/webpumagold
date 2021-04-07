@@ -1,4 +1,6 @@
-use pumagold;
+-- drop database webpumagold;
+create database webpumagold;
+use webpumagold;
 
 select * from places;
 select * from categories;

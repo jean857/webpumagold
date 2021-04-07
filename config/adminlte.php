@@ -229,6 +229,7 @@ return [
             'text' => 'Certificaciones',
             'route'  => 'admin.certifications.index',
             'icon' => '',
+            'can' => 'admin.certifications.index'
         ],
         [
             'text' => 'Contáctanos',
