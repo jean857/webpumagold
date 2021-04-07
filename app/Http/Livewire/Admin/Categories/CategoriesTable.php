@@ -25,7 +25,7 @@ class CategoriesTable extends TableComponent
         return [
             Column::make('Nombre','name')
                 ->searchable()->sortable(),
-            Column::make('Actions')
+            Column::make('Acciones')
                 ->format(function(Category $model) {
                     return view('admin.categories.includes.actions', ['category' => $model]);
                 })

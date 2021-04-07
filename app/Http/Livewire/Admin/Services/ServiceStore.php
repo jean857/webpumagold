@@ -49,7 +49,7 @@ class ServiceStore extends Component
 
     public function cancel()
     {
-        return redirect()->route('services.index');
+        return redirect()->route('admin.services.index');
     }
 
 }

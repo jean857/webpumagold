@@ -11,8 +11,8 @@ use Rappasoft\LaravelLivewireTables\Views\Column;
 class TablePlaceGeneral extends TableComponent
 {
     use HtmlComponents;
-    public $searchEnabled =  false;
-    public $paginationEnabled =  false;
+    public $searchEnabled = false;
+    public $paginationEnabled = false;
 
     public function query(): Builder
     {
@@ -25,11 +25,12 @@ class TablePlaceGeneral extends TableComponent
     public function columns(): array
     {
         return [
-            Column::make('address'),
-            Column::make('phone_number'),
-            Column::make('email'),
-            Column::make('Actions')
-                ->format(function(Place $model) {
+            Column::make('Dirección', 'address'),
+            Column::make('Teléfono', 'phone_number'),
+            Column::make('Email', 'email'),
+            Column::make('Horario de trabajo', 'business_hours'),
+            Column::make('Acciones')
+                ->format(function (Place $model) {
                     return view('admin.places-general.includes.actions', ['place' => $model]);
                 })
         ];

@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-header">
             <strong>Lista</strong>
-            <a href="{{route('services.create')}}" type="button" class="btn btn-success btn-sm float-right">Nuevo</a>
+            <a href="{{route('admin.services.create')}}" type="button" class="btn btn-success btn-sm float-right">Nuevo</a>
         </div>
         <div class="card-body">
             <livewire:admin.services.services-table>

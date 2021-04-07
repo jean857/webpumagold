@@ -227,24 +227,24 @@ return [
         ['header' => 'INFORMACION GENERAL'],
         [
             'text' => 'Certificaciones',
-            'route'  => 'certifications.index',
+            'route'  => 'admin.certifications.index',
             'icon' => '',
         ],
         [
             'text' => 'Contáctanos',
-            'route'  => 'contact-us-general.index',
+            'route'  => 'admin.contact-us-general.index',
             'icon' => '',
         ],
 
         ['header' => 'SERVICIOS'],
         [
             'text' => 'Categoria',
-            'route'  => 'categories.index',
+            'route'  => 'admin.categories.index',
             'icon' => '',
         ],
         [
             'text' => 'Servicios',
-            'route'  => 'services.index',
+            'route'  => 'admin.services.index',
             'icon' => '',
         ],
         ['header' => 'INSTITUCIONAL'],
@@ -254,14 +254,15 @@ return [
             'submenu' => [
                 [
                     'text' => 'Misión - Visión',
-                    'route'  => 'company_principles.index',
+                    'route'  => 'admin.company_principles.index',
                 ],
             ],
         ],
+        ['header' => 'ADMIN. USUARIOS'],
         [
-            'text' => 'Contáctanos',
-            'url'  => '#',
-            'icon' => '',
+            'text' => 'Usuarios',
+            'route'  => 'admin.users.index',
+            'icon' => 'fas fa-fw fa-users',
         ],
         ['header' => 'AJUSTES DE LA CUENTA'],
         [

@@ -11,13 +11,14 @@ class PlaceEdit extends Component
     public $place;
     public $latitude;
     public $longitude;
-    public $address = 'Hola';
+    public $address;
     public $phone_number;
     public $email;
     public $facebook;
     public $twitter;
     public $instagram;
     public $vimeo;
+    public $business_hours;
 
     protected $rules = [
         'address' => 'required',
@@ -33,6 +34,7 @@ class PlaceEdit extends Component
         $this->longitude = $place->longitude;
         $this->address = $place->address;
         $this->email = $place->email;
+        $this->business_hours = $place->business_hours;
         $this->phone_number = $place->phone_number;
         $this->facebook = $place->facebook;
         $this->twitter = $place->twitter;
@@ -52,14 +54,15 @@ class PlaceEdit extends Component
         $place = Place::findOrFail($this->place_id);
         $place->address = $this->address;
         $place->email = $this->email;
+        $place->business_hours = $this->business_hours;
         $place->phone_number = $this->phone_number;
         $place->save();
         session()->flash('message', 'Post successfully updated.');
-        redirect()->route('contact-us-general.index');
+        $this->cancel();
     }
 
     public function cancel()
     {
-        return redirect()->route('contact-us-general.index');
+        return redirect()->route('admin.contact-us-general.index');
     }
 }

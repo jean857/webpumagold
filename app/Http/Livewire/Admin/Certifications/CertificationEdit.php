@@ -53,6 +53,6 @@ class CertificationEdit extends Component
 
     public function cancel()
     {
-        return redirect()->route('certifications.index');
+        return redirect()->route('admin.certifications.index');
     }
 }

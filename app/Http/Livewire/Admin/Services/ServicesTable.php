@@ -31,7 +31,7 @@ class ServicesTable extends TableComponent
                 ->format(function(Service $model) {
                     return $this->html("<img src='". url('/storage/services').'/'.$model->image_source ."' style='width: 150px'></img>");
                 }),
-            Column::make('Actions')
+            Column::make('Acciones')
                 ->format(function(Service $model) {
                     return view('admin.services.includes.actions', ['service' => $model]);
                 })

@@ -48,6 +48,6 @@ class CompanyPrinciplesEdit extends Component
 
     public function cancel()
     {
-        return redirect()->route('company_principles.index');
+        return redirect()->route('admin.company_principles.index');
     }
 }

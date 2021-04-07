@@ -37,7 +37,7 @@ class CategoryEdit extends Component
 
     public function cancel()
     {
-        return redirect()->route('categories.index');
+        return redirect()->route('admin.categories.index');
     }
 
 

@@ -3,17 +3,17 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Categorias</h1>
+    <h1>Usuarios</h1>
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-header">
             <strong>Lista</strong>
-            <a href="{{route('admin.categories.create')}}" type="button" class="btn btn-success btn-sm float-right">Nuevo</a>
+            <a href="{{route('admin.users.create')}}" type="button" class="btn btn-success btn-sm float-right">Nuevo</a>
         </div>
         <div class="card-body">
-            <livewire:admin.categories.categories-table>
+            <livewire:admin.users.users-table>
         </div>
     </div>
 @stop
@@ -36,7 +36,7 @@
             }).then((result) => {
                 console.log(result)
                 if (result.value) {
-                    window.livewire.emit('remove');
+                    window.livewire.emit('remove')
                 }
             })
         })

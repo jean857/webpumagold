@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PlaceController;
@@ -6,7 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CompanyPrincipleController;
 use App\Http\Controllers\Admin\CertificationController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,16 +21,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('admin.home.index');
 
 //Contactanos general
-Route::get('/contact-us-general', [PlaceController::class, 'index'])->name('contact-us-general.index');
-Route::get('/contact-us-general/{id}/edit', [PlaceController::class, 'edit'])->name('contact-us-general.edit');
+Route::resource('/contact-us-general', PlaceController::class)->only(['index','edit'])->names('admin.contact-us-general');
+//Route::get('/contact-us-general/{id}/edit', [PlaceController::class, 'edit'])->name('admin.contact-us-general.edit');
 
 //Categorias de servicios
-Route::resource('/categories', CategoryController::class);
-Route::resource('/services', ServiceController::class);
-Route::resource('/company_principles', CompanyPrincipleController::class);
-Route::resource('/certifications', CertificationController::class);
+Route::resource('/categories', CategoryController::class)->only(['index','create','edit'])->names('admin.categories');
+Route::resource('/services', ServiceController::class)->only(['index','create','edit'])->names('admin.services');
+Route::resource('/company_principles', CompanyPrincipleController::class)->only(['index','create','edit'])->names('admin.company_principles');
+Route::resource('/certifications', CertificationController::class)->only(['index','create','edit'])->names('admin.certifications');
+Route::resource('/users', UserController::class)->only(['index','create','edit'])->names('admin.users');
 
 

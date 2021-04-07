@@ -1,5 +1,5 @@
 <div>
-    <a href="{{route('services.edit',$service->id)}}" class="btn btn-primary btn-sm">
+    <a href="{{route('admin.services.edit',$service->id)}}" class="btn btn-primary btn-sm">
         <i class="fas fa-edit"></i> Editar
     </a>
     <button type="button" class="btn btn-danger btn-sm" wire:click="confirmServiceRemoval({{$service->id}})">
