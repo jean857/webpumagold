@@ -224,56 +224,74 @@ return [
     */
 
     'menu' => [
-        ['header' => 'INFORMACION GENERAL'],
+        [
+            'header' => 'INFORMACION GENERAL',
+            'can' => ['admin.certifications.index', 'admin.contact-us-general.index']
+        ],
         [
             'text' => 'Certificaciones',
-            'route'  => 'admin.certifications.index',
+            'route' => 'admin.certifications.index',
             'icon' => '',
             'can' => 'admin.certifications.index'
         ],
         [
             'text' => 'Contáctanos',
-            'route'  => 'admin.contact-us-general.index',
+            'route' => 'admin.contact-us-general.index',
             'icon' => '',
+            'can' => 'admin.contact-us-general.index'
+
         ],
 
-        ['header' => 'SERVICIOS'],
+        [
+            'header' => 'SERVICIOS',
+            'can' => ['admin.categories.index', 'admin.services.index']
+
+        ],
         [
             'text' => 'Categoria',
-            'route'  => 'admin.categories.index',
+            'route' => 'admin.categories.index',
             'icon' => '',
+            'can' => 'admin.categories.index'
         ],
         [
             'text' => 'Servicios',
-            'route'  => 'admin.services.index',
+            'route' => 'admin.services.index',
             'icon' => '',
+            'can' => 'admin.services.index'
         ],
-        ['header' => 'INSTITUCIONAL'],
         [
-            'text'    => 'Quienes Somos',
-            'icon'    => '',
+            'header' => 'INSTITUCIONAL',
+            'can' => ['admin.company_principles.index']
+
+        ],
+        [
+            'text' => 'Quienes Somos',
+            'icon' => '',
             'submenu' => [
                 [
                     'text' => 'Misión - Visión',
-                    'route'  => 'admin.company_principles.index',
+                    'route' => 'admin.company_principles.index',
+                    'can' => 'admin.company_principles.index'
                 ],
             ],
         ],
-        ['header' => 'ADMIN. USUARIOS'],
+        ['header' => 'ADMIN. USUARIOS', 'can' => ['admin.users.index']],
         [
             'text' => 'Usuarios',
-            'route'  => 'admin.users.index',
+            'route' => 'admin.users.index',
             'icon' => 'fas fa-fw fa-users',
+            'can' => 'admin.users.index'
+
         ],
         ['header' => 'AJUSTES DE LA CUENTA'],
         [
             'text' => 'profile',
-            'url'  => '#',
+            'url' => '#',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'change_password',
-            'url'  => '#',
+            'url' => '#',
             'icon' => 'fas fa-fw fa-lock',
         ],
 
