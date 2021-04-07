@@ -28,11 +28,21 @@
                 <div class="widget style2 widget-out-link clearfix">
                     <h3 class="widget-title">Contáctanos</h3>
                     <ul class="widget-post ttm-recent-post-list pr-5">
-                        <p><i class="flaticon-placeholder"></i> CA. Las Vegas MZ A LT 19 A Urb. Zona Industrial
-                            San Juan de Miraflores Peru
-                            051 Lima 511</p>
-                        <p><i class="fa fa-phone"></i> 01 7150259</p>
-                        <p><i class="flaticon-email"></i> administración@pumagoldperu.com</p>
+                        <p><i class="flaticon-placeholder"></i>
+                            @isset($place->address)
+                                {{$place->address}}
+                            @endisset
+                        </p>
+                        <p><i class="fa fa-phone"></i>
+                            @isset($place->phone_number)
+                                {{$place->phone_number}}
+                            @endisset
+                        </p>
+                        <p><i class="flaticon-email"></i>
+                            @isset($place->email)
+                                {{$place->email}}
+                            @endisset
+                        </p>
                     </ul>
                 </div>
             </div>
@@ -48,18 +58,24 @@
             <div class="col-sm-3">
                 <div class="d-flex flex-row align-items-center justify-content-end social-icons">
                     <ul class="social-icons list-inline">
-                        <li class="social-facebook"><a class="tooltip-top" target="_blank" href=""
-                                                       data-tooltip="Facebook"><i
-                                    class="ti ti-facebook"></i></a></li>
-                        <li class="social-twitter"><a class="tooltip-top" target="_blank" href=""
-                                                      data-tooltip="Linkedin"><i class="ti ti-linkedin"></i></a>
-                        </li>
-                        <li class="social-instagram"><a class="tooltip-top" target="_blank" href=""
-                                                        data-tooltip="Google"><i class="ti ti-google"></i></a>
-                        </li>
-                        <li class="social-twitter"><a class="tooltip-top" target="_blank" href=""
-                                                      data-tooltip="twitter"><i
-                                    class="ti ti-twitter-alt"></i></a></li>
+                        @isset($place->facebook)
+                            <li class="social-facebook">
+                                <a class="tooltip-top" target="_blank" href="{{$place->facebook}}"
+                                   data-tooltip="Facebook"><i
+                                        class="ti ti-facebook"></i></a>
+                            </li>
+                        @endisset
+                        @isset($place->twitter)
+                            <li class="social-twitter"><a class="tooltip-top" target="_blank" href="{{$place->twitter}}"
+                                                          data-tooltip="Linkedin"><i class="ti ti-linkedin"></i></a>
+                            </li>
+                        @endisset
+                        @isset($place->instagram)
+                            <li class="social-instagram"><a class="tooltip-top" target="_blank"
+                                                            href="{{$place->instagram}}"
+                                                            data-tooltip="Instagram"><i class="ti ti-instagram"></i></a>
+                            </li>
+                        @endisset
                     </ul>
                 </div>
             </div>

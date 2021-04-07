@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit.prevent="store">
+    <form wire:submit.prevent="store()">
         <div class="form-row">
             <div class="col-md-6">
                 <div class="form-group">

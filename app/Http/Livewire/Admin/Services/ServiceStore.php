@@ -34,14 +34,16 @@ class ServiceStore extends Component
     public function store()
     {
         $this->validate();
-        $image_explode = explode('/',$this->image_source->store('services','public'));
         $newService = new Service();
         $newService->category_id = $this->category_id;
         $newService->name = $this->name;
         $newService->description = $this->description;
         $newService->published = $this->published;
-        $newService->image_source = $image_explode[1];
-        if($newService->save()){
+        if ($this->image_source != '') {
+            $image_explode = explode('/', $this->image_source->store('services', 'public'));
+            $newService->image_source = $image_explode[1];
+        }
+        if ($newService->save()) {
             $this->cancel();
         }
 

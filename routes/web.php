@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,13 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', function () {
-    return view('web.pages.home');
-})->name('home');
-
-//Rutas de administrador
-
-
+Route::get('/', [HomeController::class, 'index'])->name('web.home.index');
 
 Auth::routes();
+

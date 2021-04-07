@@ -200,7 +200,7 @@ return [
     | Laravel Mix
     |--------------------------------------------------------------------------
     |
-    | Here we can enable the Laravel Mix option for the admin panel.
+        | Here we can enable the Laravel Mix option for the admin panel.
     |
     | For detailed instructions you can look the laravel mix section here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Other-Configuration

@@ -29,7 +29,11 @@ class ServicesTable extends TableComponent
                 ->searchable(),
             Column::make('Imagen','image_source')
                 ->format(function(Service $model) {
-                    return $this->html("<img src='". url('/storage/services').'/'.$model->image_source ."' style='width: 150px'></img>");
+                    if(!empty($model->image_source)){
+                        return $this->html("<img src='". url('/storage/services').'/'.$model->image_source ."' style='width: 150px'></img>");
+                    }else{
+                        return '<No cuenta con una imagen>';
+                    }
                 }),
             Column::make('Acciones')
                 ->format(function(Service $model) {
