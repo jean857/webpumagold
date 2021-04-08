@@ -225,6 +225,16 @@ return [
 
     'menu' => [
         [
+            'header' => 'BANNERS',
+            'can' => ['admin.certifications.index', 'admin.contact-us-general.index']
+        ],
+        [
+            'text' => 'Home',
+            'route' => 'admin.banner_home.index',
+            'icon' => '',
+            'can' => 'admin.certifications.index'
+        ],
+        [
             'header' => 'INFORMACION GENERAL',
             'can' => ['admin.certifications.index', 'admin.contact-us-general.index']
         ],

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CompanyPrincipleController;
 use App\Http\Controllers\Admin\CertificationController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\BannerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,6 @@ Route::resource('/services', ServiceController::class)->only(['index','create','
 Route::resource('/company_principles', CompanyPrincipleController::class)->only(['index','create','edit'])->names('admin.company_principles');
 Route::resource('/certifications', CertificationController::class)->only(['index','create','edit'])->names('admin.certifications');
 Route::resource('/users', UserController::class)->only(['index','create','edit'])->names('admin.users');
+Route::resource('/banner/home', BannerController::class)->only(['index','create','edit'])->names('admin.banner_home');
 
 

@@ -64,7 +64,8 @@
                         <div class="site-navigation d-flex flex-row">
                             <!-- site-branding -->
                             <div class="site-branding mr-auto">
-                                <a class="home-link" href="home.html" title="Puma Gold Perú" rel="home">
+                                <a class="home-link" href="{{route('web.home.index')}}" title="Puma Gold Perú"
+                                   rel="home">
                                     <img id="logo-img" class="img-center" src="{{asset('images/logo-img.png')}}"
                                          alt="logo-img">
                                 </a>

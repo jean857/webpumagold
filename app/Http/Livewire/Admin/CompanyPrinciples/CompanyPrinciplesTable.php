@@ -38,6 +38,14 @@ class CompanyPrinciplesTable extends TableComponent
                 ->format(function (CompanyPrinciple $model) {
                     return $this->html($model->environment);
                 }),
+            Column::make('Imagen','image_source')
+                ->format(function(CompanyPrinciple $model) {
+                    if(!empty($model->image_source)){
+                        return $this->html("<img src='". url('/storage/company').'/'.$model->image_source ."' style='width: 150px'></img>");
+                    }else{
+                        return '<No cuenta con una imagen>';
+                    }
+                }),
             Column::make('Acciones')
                 ->format(function (CompanyPrinciple $model) {
                     return view('admin.company_principles.includes.actions', ['company' => $model]);

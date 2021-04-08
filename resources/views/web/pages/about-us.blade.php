@@ -79,12 +79,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-10">
-                        <!-- ttm_single_image-wrapper -->
-                        <div class="ttm_single_image-wrapper text-right ">
-                            <img class="img-fluid" src="images/single-img-six.png" alt="">
+                    @if(isset($aboutUs->image_source) and !empty($aboutUs->image_source))
+                        <div class="col-lg-6 col-md-10">
+                            <!-- ttm_single_image-wrapper -->
+                            <div class="ttm_single_image-wrapper text-right ">
+                                <img class="img-fluid" src="{{asset('storage/company/'.$aboutUs->image_source)}}" alt="">
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 </div><!-- row end -->
             </div>
         </section>
