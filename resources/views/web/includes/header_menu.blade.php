@@ -76,13 +76,14 @@
                             <!-- menu -->
                             <nav class="main-menu menu-mobile" id="menu">
                                 <ul class="menu">
-                                    <li class="mega-menu-item active">
+                                    <li class="mega-menu-item {{ (request()->is('/')) ? 'active' : '' }}">
                                         <a href="{{route('web.home.index')}}">Home</a>
                                     </li>
-                                    <li class="mega-menu-item">
+
+                                    <li class="mega-menu-item {{ (request()->is('quienes-somos')) ? 'active' : '' }}">
                                         <a href="{{route('web.about-us.index')}}">Quienes somos</a>
                                     </li>
-                                    <li class="mega-menu-item megamenu-fw">
+                                    <li class="mega-menu-item megamenu-fw {{ (request()->is('servicios/*')) ? 'active' : '' }}">
                                         <a href="#" class="mega-menu-link">Servicios</a>
                                         <ul class="mega-submenu megamenu-content" role="menu">
                                             <li>
@@ -98,7 +99,6 @@
                                                         if(count($category_services) > 3){
                                                                 $col_md = 'col-md-4';
                                                         }
-
                                                     @endphp
                                                     @foreach($category_services as $category)
                                                         <div class="col-menu {{$col_md}}">
@@ -118,8 +118,8 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="mega-menu-item">
-                                        <a href="contact-us.html">Contáctanos</a>
+                                    <li class="mega-menu-item {{ (request()->is('contactanos')) ? 'active' : '' }}">
+                                        <a href="{{route('web.contact-us.index')}}">Contáctanos</a>
                                     </li>
                                 </ul>
                             </nav>
