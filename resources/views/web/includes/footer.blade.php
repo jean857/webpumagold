@@ -4,7 +4,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 widget-area">
                 <div class="widget widget_text clearfix">
                     <div class="footer-logo">
-                        <img id="footer-logo-img" class="img-center" src="images/footer-logo.png" alt="">
+                        <img id="footer-logo-img" class="img-center" src="{{asset('images/footer-logo.png')}}" alt="">
                     </div>
                     <div class="textwidget widget-text">
                         <p class="pb-10 pr-30">Lorem Ipsum is simply dummy text of the printing and typesetting

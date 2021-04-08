@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\AboutUsController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,9 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('web.home.index');
+Route::get('/quienes-somos', [AboutUsController::class, 'index'])->name('web.about-us.index');
+
+Route::get('/servicios/{slug_service}/', [ServiceController::class, 'index'])->name('web.service.index');
 
 Auth::routes();
 

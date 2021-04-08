@@ -65,7 +65,7 @@
                             <!-- site-branding -->
                             <div class="site-branding mr-auto">
                                 <a class="home-link" href="home.html" title="Puma Gold Perú" rel="home">
-                                    <img id="logo-img" class="img-center" src="images/logo-img.png" alt="logo-img">
+                                    <img id="logo-img" class="img-center" src="{{asset('images/logo-img.png')}}" alt="logo-img">
                                 </a>
                             </div><!-- site-branding end -->
                             <div class="btn-show-menu-mobile menubar menubar--squeeze">
@@ -77,10 +77,10 @@
                             <nav class="main-menu menu-mobile" id="menu">
                                 <ul class="menu">
                                     <li class="mega-menu-item active">
-                                        <a href="home.html">Home</a>
+                                        <a href="{{route('web.home.index')}}">Home</a>
                                     </li>
                                     <li class="mega-menu-item">
-                                        <a href="about-us.html">Quienes somos</a>
+                                        <a href="{{route('web.about-us.index')}}">Quienes somos</a>
                                     </li>
                                     <li class="mega-menu-item megamenu-fw">
                                         <a href="#" class="mega-menu-link">Servicios</a>
@@ -107,7 +107,7 @@
                                                                 <ul class="menu-col">
                                                                     @foreach($category->services as $service)
                                                                         <li>
-                                                                            <a href="services_1.html">{{$service->name}}</a>
+                                                                            <a href="{{route('web.service.index',$service->slug)}}">{{$service->name}}</a>
                                                                         </li>
                                                                     @endforeach
                                                                 </ul>

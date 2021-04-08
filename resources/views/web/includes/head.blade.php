@@ -7,45 +7,45 @@
 <title>Puma Gold Perú</title>
 
 <!-- favicon icon -->
-<link rel="shortcut icon" href="images/favicon.png"/>
+<link rel="shortcut icon" href="{{asset('images/favicon.png')}}"/>
 
 <!-- bootstrap -->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}"/>
 
 <!-- animate -->
-<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}"/>
 
 <!-- fontawesome -->
-<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.css')}}"/>
 
 <!-- themify -->
-<link rel="stylesheet" type="text/css" href="css/themify-icons.css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('css/themify-icons.css')}}"/>
 
 <!-- flaticon -->
-<link rel="stylesheet" type="text/css" href="css/flaticon.css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('css/flaticon.css')}}"/>
 
 <!-- slick -->
-<link rel="stylesheet" type="text/css" href="css/slick.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/slick.css')}}">
 
 <!-- REVOLUTION LAYERS STYLES -->
 
-<link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+<link rel="stylesheet" type="text/css" href="{{asset('revolution/css/layers.css')}}">
 
-<link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
+<link rel="stylesheet" type="text/css" href="{{asset('revolution/css/settings.css')}}">
 
 <!-- prettyphoto -->
-<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/prettyPhoto.css')}}">
 
 <!-- shortcodes -->
-<link rel="stylesheet" type="text/css" href="css/shortcodes.css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('css/shortcodes.css')}}"/>
 
 <!-- main -->
-<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}"/>
 
 <!-- main -->
-<link rel="stylesheet" type="text/css" href="css/megamenu.css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('css/megamenu.css')}}"/>
 
 <!-- responsive -->
-<link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}"/>
 
-<link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.css"/>
+<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-datetimepicker.css')}}"/>
