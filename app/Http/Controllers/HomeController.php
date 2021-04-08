@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('web.pages.home');
+        $banners_home = Banner::where('page', 'home')->get(['image_source','description']);
+        return view('web.pages.home',compact('banners_home'));
     }
 
     /**
