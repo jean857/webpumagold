@@ -18,12 +18,12 @@
                             <div class="layer-content">
                                 <div class="pb-15">
                                     <h4>Conéctate con nosotros</h4>
-                                    <!--                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>-->
                                 </div>
                                 <!--featured-icon-box-->
                                 <div class="featured-icon-box icon-align-before-content icon-ver_align-top">
                                     <div class="featured-icon">
-                                        <div class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-white ttm-icon_element-size-sm">
+                                        <div
+                                            class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-white ttm-icon_element-size-sm">
                                             <i class="flaticon-placeholder"></i>
                                         </div>
                                     </div>
@@ -40,15 +40,18 @@
                                 <!--featured-icon-box-->
                                 <div class="featured-icon-box icon-align-before-content icon-ver_align-top">
                                     <div class="featured-icon">
-                                        <div class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-white ttm-icon_element-size-sm">
+                                        <div
+                                            class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-white ttm-icon_element-size-sm">
                                             <i class="flaticon-call"></i>
                                         </div>
                                     </div>
-                                    <div class="featured-content">
-                                        <div class="featured-desc">
-                                            <p>01 7150259</p>
+                                    @isset($place->phone_number)
+                                        <div class="featured-content">
+                                            <div class="featured-desc">
+                                                <p> {{$place->phone_number}}</p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endisset
                                 </div><!-- featured-icon-box end-->
                                 <div class="sep_holder_box width-100 mt-20 mb-20">
                                     <span class="sep_holder"><span class="sep_line"></span></span>
@@ -56,34 +59,41 @@
                                 <!--featured-icon-box-->
                                 <div class="featured-icon-box icon-align-before-content icon-ver_align-top">
                                     <div class="featured-icon">
-                                        <div class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-white ttm-icon_element-size-sm">
+                                        <div
+                                            class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-white ttm-icon_element-size-sm">
                                             <i class="flaticon-email"></i>
                                         </div>
                                     </div>
-                                    <div class="featured-content">
-                                        <div class="featured-desc">
-                                            <a href="mailto:info@Laboratory.com">administración@pumagoldperu.com</a><br>
-                                            <a href="mailto:info@Laboratory.com">administración@pumagoldperu.com</a>
+                                    @isset($place->phone_number)
+
+                                        <div class="featured-content">
+                                            <div class="featured-desc">
+                                                <a href="mailto:{{$place->email}}">{{$place->email}}</a><br>
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endisset
                                 </div><!-- featured-icon-box end-->
                                 <ul class="social-icons circle social-hover mt-30">
-                                    <li class="social-facebook"><a class="tooltip-top" target="_blank" href="#"
-                                                                   data-tooltip="Facebook"><i class="fa fa-facebook"
+                                    @isset($place->facebook)
+                                        <li class="social-facebook">
+                                            <a class="tooltip-top" target="_blank" href="{{$place->facebook}}"
+                                               data-tooltip="Facebook"><i class="fa fa-facebook"
+                                                                          aria-hidden="true"></i></a>
+                                        </li>
+                                    @endif
+                                    @isset($place->twitter)
+                                        <li class="social-twitter"><a class="tooltip-top" target="_blank"
+                                                                      href="{{$place->twitter}}"
+                                                                      data-tooltip="Twitter"><i class="fa fa-twitter"
+                                                                                                aria-hidden="true"></i></a>
+                                        </li>
+                                    @endif
+                                    @isset($place->instagram)
+                                        <li class="social-gplus"><a class=" tooltip-top" target="_blank" href="{{$place->instagram}}"
+                                                                    data-tooltip="Instagram"><i class="fa fa-instagram"
                                                                                               aria-hidden="true"></i></a>
-                                    </li>
-                                    <li class="social-twitter"><a class="tooltip-top" target="_blank" href="#"
-                                                                  data-tooltip="Twitter"><i class="fa fa-twitter"
-                                                                                            aria-hidden="true"></i></a>
-                                    </li>
-                                    <li class="social-gplus"><a class=" tooltip-top" target="_blank" href="#"
-                                                                data-tooltip="Google+"><i class="fa fa-google-plus"
-                                                                                          aria-hidden="true"></i></a>
-                                    </li>
-                                    <li class="social-linkedin"><a class=" tooltip-top" target="_blank" href=""
-                                                                   data-tooltip="LinkedIn"><i class="fa fa-linkedin"
-                                                                                              aria-hidden="true"></i></a>
-                                    </li>
+                                        </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -130,18 +140,19 @@
                                             <div class="col-lg-6">
                                                 <label>
                                                     <span class="text-input"><input name="phone" type="text" value=""
-                                                                                    placeholder="Asunto"
+                                                                                    placeholder="Empresa"
                                                                                     required="required"></span>
                                                 </label>
                                             </div>
                                         </div>
                                         <label>
                                             <span class="text-input"><textarea name="message" rows="3"
-                                                                               placeholder="Mensaje"
+                                                                               placeholder="Consulta"
                                                                                required="required"></textarea></span>
                                         </label>
-                                        <button class="submit ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                type="submit">Enviar
+                                        <button
+                                            class="submit ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor"
+                                            type="submit">Enviar
                                         </button>
                                     </form>
                                 </div>

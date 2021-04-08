@@ -64,5 +64,8 @@
 <script src="{{asset('revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
 <script src="{{asset('revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
 <!-- Javascript end-->
+
+<script src="{{asset('js/map.js')}}"></script>
+<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
 </body>
 </html>

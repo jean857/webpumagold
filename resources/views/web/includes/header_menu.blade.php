@@ -65,7 +65,8 @@
                             <!-- site-branding -->
                             <div class="site-branding mr-auto">
                                 <a class="home-link" href="home.html" title="Puma Gold Perú" rel="home">
-                                    <img id="logo-img" class="img-center" src="{{asset('images/logo-img.png')}}" alt="logo-img">
+                                    <img id="logo-img" class="img-center" src="{{asset('images/logo-img.png')}}"
+                                         alt="logo-img">
                                 </a>
                             </div><!-- site-branding end -->
                             <div class="btn-show-menu-mobile menubar menubar--squeeze">
@@ -79,7 +80,6 @@
                                     <li class="mega-menu-item {{ (request()->is('/')) ? 'active' : '' }}">
                                         <a href="{{route('web.home.index')}}">Home</a>
                                     </li>
-
                                     <li class="mega-menu-item {{ (request()->is('quienes-somos')) ? 'active' : '' }}">
                                         <a href="{{route('web.about-us.index')}}">Quienes somos</a>
                                     </li>
