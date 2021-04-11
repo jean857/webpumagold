@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\SendContactRequest;
+use App\Mail\NotificationContactClient;
+use App\Models\Contact;
+use Illuminate\Support\Facades\Mail;
 
 class ContactUsController extends Controller
 {
@@ -16,69 +19,24 @@ class ContactUsController extends Controller
         return view('web.pages.contact-us');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function sendMail(SendContactRequest $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        try {
+            $newContact = new Contact();
+            $newContact->name = $request->post('name');
+            $newContact->email = $request->post('email');
+            $newContact->phone = $request->post('phone');
+            $newContact->business = $request->post('business');
+            $newContact->message = $request->post('message');
+            if ($newContact->save()) {
+                $data = $request->all();
+                Mail::to('qgaray.j@gmail.com', 'Puma Gold Perú')->send(new NotificationContactClient($data));
+            }
+            return back()->with('success',
+                '¡Gracias por Contactarnos! En breve uno de nuestros asesores se pondrá en contacto con usted');
+        } catch (\Exception $e) {
+            return back()->with('danger',
+                'Ups! Algo algo anda mal.');
+        }
     }
 }

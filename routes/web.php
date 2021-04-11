@@ -23,5 +23,8 @@ Route::get('/contactanos', [ContactUsController::class, 'index'])->name('web.con
 
 Route::get('/servicios/{slug_service}/', [ServiceController::class, 'index'])->name('web.service.index');
 
+Route::post('/send/contact', [ContactUsController::class, 'sendMail'])->name('web.contact-us.send');
+
+
 Auth::routes();
 

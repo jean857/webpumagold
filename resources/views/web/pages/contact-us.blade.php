@@ -2,12 +2,23 @@
 @section('content')
     <div class="site-main">
         <!--google_map-->
-        <div id="google_map" class="google_map">
-            <div class="map_container">
-                <div id="map"></div>
+        @if(isset($place->map_url) and !empty($place->map_url))
+            <div id="google_map" class="google_map">
+                <div class="map_container">
+                    <iframe
+                        src="{{$place->map_url}}"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
-        </div>
-        <!-- cta-info-section -->
+        @else
+            <div id="google_map" class="google_map">
+                <div class="map_container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1320.513097231079!2d-76.97884036773645!3d-12.157487115716691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b844f824faf9%3A0x40fd9d48e8df2914!2sAv.%20las%20Vegas%2C%20San%20Juan%20de%20Miraflores%2015801!5e0!3m2!1ses-419!2spe!4v1618108733036!5m2!1ses-419!2spe"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        @endif
         <section class="ttm-row cta-info-section ttm-bgcolor-grey bg-layer bg-layer-equal-height clearfix">
             <div class="container">
                 <!-- row -->
@@ -89,9 +100,10 @@
                                         </li>
                                     @endif
                                     @isset($place->instagram)
-                                        <li class="social-gplus"><a class=" tooltip-top" target="_blank" href="{{$place->instagram}}"
+                                        <li class="social-gplus"><a class=" tooltip-top" target="_blank"
+                                                                    href="{{$place->instagram}}"
                                                                     data-tooltip="Instagram"><i class="fa fa-instagram"
-                                                                                              aria-hidden="true"></i></a>
+                                                                                                aria-hidden="true"></i></a>
                                         </li>
                                     @endif
                                 </ul>
@@ -111,8 +123,14 @@
                                             <h2 class="title">No dude en preguntar Envíe su mensaje.</h2>
                                         </div>
                                     </div><!-- section-title end -->
+                                    @if(Session::has('success'))
+                                        <div class="alert alert-success">
+                                            {{ Session::get('success') }}
+                                        </div>
+                                    @endif
                                     <form id="ttm-contactform-2" class="ttm-contactform-2 wrap-form clearfix"
-                                          method="post" action="#">
+                                          method="post" action="{{route('web.contact-us.send')}}">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <label>
@@ -123,7 +141,7 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <label>
-                                                    <span class="text-input"><input name="address" type="text" value=""
+                                                    <span class="text-input"><input name="email" type="email" value=""
                                                                                     placeholder="Email"
                                                                                     required="required"></span>
                                                 </label>
@@ -139,7 +157,7 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <label>
-                                                    <span class="text-input"><input name="phone" type="text" value=""
+                                                    <span class="text-input"><input name="business" type="text" value=""
                                                                                     placeholder="Empresa"
                                                                                     required="required"></span>
                                                 </label>

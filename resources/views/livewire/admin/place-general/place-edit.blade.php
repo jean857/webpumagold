@@ -29,7 +29,14 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="phone_number">Horario de trabajo</label>
-                    <input type="text" class="form-control" id="phone_number" placeholder="Telefono"  wire:model="business_hours">
+                    <input type="text" class="form-control" id="business_hours" placeholder="Horario de trabajo"  wire:model="business_hours">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="phone_number">Ubicacion Mapa (URL)</label>
+                    <input type="text" class="form-control" id="map" placeholder="Ubicacion Mapa (URL)"  wire:model="map_url">
+                    @error('map_url') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
             </div>
         </div>

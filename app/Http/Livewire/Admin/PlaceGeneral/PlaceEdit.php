@@ -18,11 +18,13 @@ class PlaceEdit extends Component
     public $twitter;
     public $instagram;
     public $vimeo;
+    public $map_url;
     public $business_hours;
 
     protected $rules = [
         'address' => 'required',
         'email' => 'required|email',
+        'map_url' => 'url',
     ];
 
 
@@ -40,6 +42,7 @@ class PlaceEdit extends Component
         $this->twitter = $place->twitter;
         $this->twitter = $place->twitter;
         $this->instagram = $place->instagram;
+        $this->map_url = $place->map_url;
         $this->vimeo = $place->vimeo;
     }
 
@@ -56,9 +59,10 @@ class PlaceEdit extends Component
         $place->email = $this->email;
         $place->business_hours = $this->business_hours;
         $place->phone_number = $this->phone_number;
-        $place->save();
-        session()->flash('message', 'Post successfully updated.');
-        $this->cancel();
+        $place->map_url = $this->map_url;
+        if($place->save()){
+            $this->cancel();
+        };
     }
 
     public function cancel()

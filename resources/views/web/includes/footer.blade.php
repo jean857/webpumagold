@@ -6,21 +6,26 @@
                     <div class="footer-logo">
                         <img id="footer-logo-img" class="img-center" src="{{asset('images/footer-logo.png')}}" alt="">
                     </div>
-                    <div class="textwidget widget-text">
-                        <p class="pb-10 pr-30">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                            1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book.</p>
-                    </div>
+{{--                    <div class="textwidget widget-text">--}}
+{{--                        <p class="pb-10 pr-30">Lorem Ipsum is simply dummy text of the printing and typesetting--}}
+{{--                            industry. Lorem Ipsum has been the industry's standard dummy text ever since the--}}
+{{--                            1500s, when an unknown printer took a galley of type and scrambled it to make a type--}}
+{{--                            specimen book.</p>--}}
+{{--                    </div>--}}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 widget-area">
                 <div class="widget widget_nav_menu clearfix">
                     <h3 class="widget-title">Menú</h3>
                     <ul id="menu-footer-quick-links">
-                        <li><a href="about-us.html">Quienes somos</a></li>
-                        <li><a href="services.html">Servicios</a></li>
-                        <li><a href="contact-us.html">Contáctanos</a></li>
+                        <li><a href="{{route('web.about-us.index')}}">Quiénes Somos</a></li>
+                        @if($category_services->count() > 0)
+                            @php $categories = $category_services->toArray(); @endphp
+                            <li>
+                                <a href="{{route('web.service.index',$categories[0]['services'][0]['slug'])}}">Servicios</a>
+                            </li>
+                        @endif
+                        <li><a href="{{route('web.contact-us.index')}}">Contáctanos</a></li>
                     </ul>
                 </div>
             </div>
