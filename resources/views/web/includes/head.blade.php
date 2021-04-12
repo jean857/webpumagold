@@ -17,6 +17,7 @@
 
 <!-- fontawesome -->
 <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{asset('vendor/fontawesome-free/css/all.min.css')}}"/>
 
 <!-- themify -->
 <link rel="stylesheet" type="text/css" href="{{asset('css/themify-icons.css')}}"/>

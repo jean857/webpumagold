@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Banner;
 use App\Models\Certification;
+use App\Models\Highlight;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,7 +17,8 @@ class HomeController extends Controller
     public function index()
     {
         $banners_home = Banner::where('page', 'home')->get(['image_source', 'description']);
-        return view('web.pages.home')->with(compact('banners_home'));
+        $highlights = Highlight::orderBy('id','asc')->get(['title', 'description','icon']);
+        return view('web.pages.home')->with(compact('banners_home','highlights'));
     }
 
     /**

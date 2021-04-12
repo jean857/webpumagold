@@ -97,7 +97,7 @@
                                                         if(count($category_services) === 2){
                                                                 $col_md = 'col-md-6';
                                                         }
-                                                        if(count($category_services) > 3){
+                                                        if(count($category_services) >= 3){
                                                                 $col_md = 'col-md-4';
                                                         }
                                                     @endphp

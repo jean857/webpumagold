@@ -3,78 +3,52 @@
     @include('web.includes.partials.slider')
     <div class="site-main">
         <!--features-section-->
-        <section class="ttm-row features-section clearfix">
-            <div class="container-fluid">
-                <!-- row -->
-                <div class="row align-items-center">
-                    <div class="col-md-4">
-                        <!-- featured-imagebox -->
-                        <div class="featured-icon-box icon-align-before-content icon-ver_align-top style4">
-                            <div class="featured-icon">
-                                <div
-                                    class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-skincolor ttm-icon_element-size-lg">
-                                    <i class="ti ti-timer"></i>
-                                </div>
+        @if($highlights->count() > 0)
+            <section class="ttm-row features-section clearfix">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        @php
+                            if($highlights->count() == 1){
+                                    $col_md = 'col-md-12';
+                            }
+                            if($highlights->count() == 2){
+                                    $col_md = 'col-md-6';
+                            }
+                            if($highlights->count() >= 3){
+                                    $col_md = 'col-md-4';
+                            }
+                        @endphp
+                        @foreach($highlights as $key => $highlight)
+                            @php
+                                $class = '';
+                                    if($key == 1){
+                                        $class = 'border-left border-right';
+                                    }
+                            @endphp
+                            <div class="{{$col_md}} {{ $class }}">
+                                <div class="featured-icon-box icon-align-before-content icon-ver_align-top style4">
+                                    <div class="featured-icon">
+                                        <div
+                                            class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-skincolor ttm-icon_element-size-lg">
+                                            <i class="{{$highlight->icon}}" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="featured-content">
+                                        <div class="featured-title">
+                                            <h5>{{$highlight->title}}</h5>
+                                        </div>
+                                        <div class="featured-desc">
+                                            <p>{{$highlight->description}}</p>
+                                        </div>
+                                    </div>
+                                </div><!-- featured-imagebox end-->
                             </div>
-                            <div class="featured-content">
-                                <div class="featured-title">
-                                    <h5>Atención 24/7</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Nuestra mesa de ayuda está siempre abierta en línea, para toda
-                                        la información y consultas sometidas.</p>
-                                </div>
-                                <!--                                <a class="ttm-btn ttm-btn-size-md ttm-icon-btn-right ttm-btn-color-skincolor btn-inline"-->
-                                <!--                                   href="#">Get A Free Quote<i class="ti ti-angle-double-right"></i></a>-->
-                            </div>
-                        </div><!-- featured-imagebox end-->
+                        @endforeach
                     </div>
-                    <div class="col-md-4 border-left border-right">
-                        <!-- featured-imagebox -->
-                        <div class="featured-icon-box icon-align-before-content icon-ver_align-top style4">
-                            <div class="featured-icon">
-                                <div
-                                    class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-skincolor ttm-icon_element-size-lg">
-                                    <i class="ti ti-plug"></i>
-                                </div>
-                            </div>
-                            <div class="featured-content">
-                                <div class="featured-title">
-                                    <h5>Nuestras Instalaciones</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Somos uno de los mejores laboratorios con soluciones de herramientas de alta
-                                        tecnología y mecanismo de experiencia.</p>
-                                </div>
-                            </div>
-                        </div><!-- featured-imagebox end-->
-                    </div>
-                    <div class="col-md-4">
-                        <!-- featured-imagebox -->
-                        <div class="featured-icon-box icon-align-before-content icon-ver_align-top style4">
-                            <div class="featured-icon">
-                                <div
-                                    class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-skincolor ttm-icon_element-size-lg">
-                                    <i class="ti ti-split-h"></i>
-                                </div>
-                            </div>
-                            <div class="featured-content">
-                                <div class="featured-title">
-                                    <h5>Nuestros servicios</h5>
-                                </div>
-                                <div class="featured-desc">
-                                    <p>Nuestra área de servicio es amplia. Somos ansiosamente los mejores proveedores de
-                                        servicios para los análisis químicos y metalurgicos</p>
-                                </div>
-                            </div>
-                        </div><!-- featured-imagebox end-->
-                    </div>
-                </div><!-- row end -->
-            </div>
-        </section>
-        <!--features-section end-->
-
-
+                </div>
+            </section>
+        @endif
+    <!--features-section end-->
         <!--about-section-->
         <section class="ttm-row about-section bg-img11 ttm-bgcolor-grey clearfix">
             <div class="container">

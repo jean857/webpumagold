@@ -50,6 +50,8 @@
         $(document).ready(function () {
             $('.icp-dd').iconpicker()
             $('.icp-dd').on('iconpickerSelected', function (event) {
+                console.log(event.iconpickerValue)
+                console.log(event)
             @this.set('icon', event.iconpickerValue);
             })
         })
