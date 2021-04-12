@@ -28,7 +28,7 @@ class NotificationContactClient extends Mailable
      */
     public function build()
     {
-        return $this->markdown('notifications::contact-client',$this->data)
+        return $this->markdown('notifications::contact-client', $this->data)
             ->from('donoreply@pumagoldperu.com', 'Puma Gold Perú')
             ->subject('🔔 Notificación Web - Contáctanos');
     }

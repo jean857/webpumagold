@@ -61,40 +61,64 @@
                                 <!-- section title -->
                                 <div class="section-title">
                                     <div class="title-header">
-                                        <h2 class="title">Contáctenos</h2>
+                                        <h2 class="title">Consúltanos por nuestro servicio : {{$service->name}}</h2>
                                     </div>
                                 </div><!-- section title end -->
-                                <form id="ttm-contactform" class="ttm-contactform wrap-form clearfix" method="post"
-                                      action="#">
+                                @if(Session::has('success'))
+                                    <div class="alert alert-success">
+                                        {{ Session::get('success') }}
+                                    </div>
+                                @endif
+                                @if(Session::has('danger'))
+                                    <div class="alert alert-danger">
+                                        {{ Session::get('danger') }}
+                                    </div>
+                                @endif
+                                <form id="ttm-contactform-2" class="ttm-contactform-2 wrap-form clearfix"
+                                      method="post" action="{{route('web.contact-us.send')}}">
+                                    @csrf
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <input type="hidden" value="{{$service->id}}" name="service">
+                                        <div class="col-lg-6">
                                             <label>
-                                                <span class="text-input"><input name="your-name" type="text" value=""
-                                                                                placeholder="Tu Nombre"
-                                                                                required="required"></span>
+                                                    <span class="text-input"><input name="name" type="text" value=""
+                                                                                    placeholder="Nombre"
+                                                                                    required="required"></span>
                                             </label>
+                                        </div>
+                                        <div class="col-lg-6">
                                             <label>
-                                                <span class="text-input"><input name="email" type="email" value=""
-                                                                                placeholder="Email" required="required"></span>
-                                            </label>
-                                            <label>
-                                                <span class="text-input"><input name="phone" type="text" value=""
-                                                                                placeholder="Telefono"
-                                                                                required="required"></span>
-                                            </label>
-                                            <label>
-                                                <span class="text-input"><textarea name="message" rows="4" cols="40"
-                                                                                   placeholder="Mensaje"
-                                                                                   required="required"></textarea></span>
-                                            </label>
-                                            <label>
-                                                <button
-                                                    class="submit ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                    type="submit">Enviar
-                                                </button>
+                                                    <span class="text-input"><input name="email" type="email" value=""
+                                                                                    placeholder="Email"
+                                                                                    required="required"></span>
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label>
+                                                    <span class="text-input"><input name="phone" type="text" value=""
+                                                                                    placeholder="Celular ó telefono"
+                                                                                    required="required"></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>
+                                                    <span class="text-input"><input name="business" type="text" value=""
+                                                                                    placeholder="Empresa"
+                                                                                    required="required"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label>
+                                            <span class="text-input"><textarea name="message" rows="3"
+                                                                               placeholder="Consulta"
+                                                                               required="required"></textarea></span>
+                                    </label>
+                                    <button
+                                        class="submit ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor"
+                                        type="submit">Enviar
+                                    </button>
                                 </form>
                             </div>
                         </div>

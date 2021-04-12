@@ -6,8 +6,11 @@
         @endcomponent
     @endslot
     @slot('subcopy')
-        <h1>Ha recibido un mensaje de:</h1>
+        <h1>Ha recibido un mensaje de un cliente:</h1>
         <hr style="color: #ccc;background: #ccc;border: 1px solid;">
+        @if(!empty($service))
+            <h2>Solicitando informacion sobre el servicio de: <strong>{{$service['name']}}</strong></h2>
+        @endif
         <p style="font-weight: bold">Nombre: <span style="font-weight: normal">{{$name}}</span></p>
         <p style="font-weight: bold">Email: <span style="font-weight: normal">{{$email}}</span></p>
         <p style="font-weight: bold">Telf.: <span style="font-weight: normal">{{$phone}}</span></p>
