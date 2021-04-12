@@ -17,7 +17,6 @@ class ServicesComposer
                 $query->where('published', 1);
             }
         ])->whereHas('services')->get(['id', 'name']);
-//        dd($category_services);
         $view->with(['category_services' => $category_services]);
     }
 }

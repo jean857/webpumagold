@@ -16,8 +16,7 @@ class HomeController extends Controller
     public function index()
     {
         $banners_home = Banner::where('page', 'home')->get(['image_source', 'description']);
-        $certifications = Certification::orderBy('id', 'desc')->get(['name','description','image_source']);
-        return view('web.pages.home')->with(compact('banners_home', 'certifications'));
+        return view('web.pages.home')->with(compact('banners_home'));
     }
 
     /**

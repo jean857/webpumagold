@@ -91,6 +91,8 @@
             </div>
         </section>
 
+        @include('web.includes.partials.certifications')
+
     </div><!--site-main end-->
 
 
