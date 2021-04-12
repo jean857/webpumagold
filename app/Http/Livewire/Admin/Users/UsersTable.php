@@ -34,7 +34,7 @@ class UsersTable extends TableComponent
                 ->format(function (User $model) {
                     return view('admin.users.includes.roles', ['user_roles' => $model->getRoleNames()]);
                 }),
-            Column::make('Actions')
+            Column::make('Acciones')
                 ->format(function (User $model) {
                     return view('admin.users.includes.actions', ['user' => $model]);
                 })
