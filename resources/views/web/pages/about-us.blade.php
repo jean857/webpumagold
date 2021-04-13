@@ -1,25 +1,46 @@
 @extends('web.layouts.layout')
 @section('content')
-    <!-- page-title -->
-    <div class="ttm-page-title-row">
-        <div class="ttm-page-title-row-inner">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <div class="page-title-heading">
-                            <h2 class="title">Quienes somos</h2>
-                        </div>
-                        <div class="breadcrumb-wrapper">
+    @if(!empty($banner))
+        <div class="ttm-page-title-row" style="background: url({{asset('storage/banners/'.$banner->image_source)}});">
+            <div class="ttm-page-title-row-inner">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="page-title-heading">
+                                <h2 class="title">Quienes somos</h2>
+                            </div>
+                            <div class="breadcrumb-wrapper">
                                 <span>
                                     <a title="Home" href="{{route('web.home.index')}}">Home</a>
                                 </span>
-                            <span>Quiénes Somos</span>
+                                <span>Quiénes Somos</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!-- page-title end-->
+    @else
+        <div class="ttm-page-title-row">
+            <div class="ttm-page-title-row-inner">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="page-title-heading">
+                                <h2 class="title">Quienes somos</h2>
+                            </div>
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Home" href="{{route('web.home.index')}}">Home</a>
+                                </span>
+                                <span>Quiénes Somos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     <!--site-main start-->
     <div class="site-main">
 
@@ -83,7 +104,8 @@
                         <div class="col-lg-6 col-md-10">
                             <!-- ttm_single_image-wrapper -->
                             <div class="ttm_single_image-wrapper text-right ">
-                                <img class="img-fluid" src="{{asset('storage/company/'.$aboutUs->image_source)}}" alt="">
+                                <img class="img-fluid" src="{{asset('storage/company/'.$aboutUs->image_source)}}"
+                                     alt="">
                             </div>
                         </div>
                     @endif

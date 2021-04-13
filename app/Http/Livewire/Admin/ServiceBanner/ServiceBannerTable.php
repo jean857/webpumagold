@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Livewire\Admin\HomeBanners;
+namespace App\Http\Livewire\Admin\ServiceBanner;
 
 use App\Models\Banner;
 use Illuminate\Database\Eloquent\Builder;
+use Livewire\Component;
 use Rappasoft\LaravelLivewireTables\TableComponent;
 use Rappasoft\LaravelLivewireTables\Traits\HtmlComponents;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 
-class HomeBannersTable extends TableComponent
+class ServiceBannerTable extends TableComponent
 {
     use HtmlComponents;
     public $perPage = 10;
@@ -18,7 +19,7 @@ class HomeBannersTable extends TableComponent
 
     public function query(): Builder
     {
-        return Banner::where('page', '=', 'home')->orderBy('id', 'desc');
+        return Banner::where('page', '=', 'services')->orderBy('id', 'desc');
     }
 
     public function columns(): array
@@ -32,13 +33,9 @@ class HomeBannersTable extends TableComponent
                         return '<No cuenta con una imagen>';
                     }
                 }),
-            Column::make('Descripción', 'description')
-                ->format(function (Banner $model) {
-                    return $this->html($model->description);
-                }),
             Column::make('Actions')
                 ->format(function (Banner $model) {
-                    return view('admin.banners.home.includes.actions', ['banner' => $model]);
+                    return view('admin.banners.services.includes.actions', ['banner' => $model]);
                 })
         ];
 

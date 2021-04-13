@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class ServiceController extends Controller
     {
         $service = Service::where('slug', $slug_service)->where('published',1)->first();
         if($service){
-            return view('web.pages.service',compact('service'));
+            $banner = Banner::where('page', 'services')->first();
+            return view('web.pages.service',compact('service','banner'));
         }else{
             abort(404);
         }

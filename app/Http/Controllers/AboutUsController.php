@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\CompanyPrinciple;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class AboutUsController extends Controller
     public function index()
     {
         $aboutUs = CompanyPrinciple::first();
-        return view('web.pages.about-us',compact('aboutUs'));
+        $banner = Banner::where('page', 'about_us')->first();
+        return view('web.pages.about-us', compact('aboutUs', 'banner'));
 
     }
 

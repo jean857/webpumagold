@@ -235,6 +235,18 @@ return [
             'can' => 'admin.banner_home.index'
         ],
         [
+            'text' => 'Quienes somos',
+            'route' => 'admin.banner_about_us.index',
+            'icon' => '',
+            'can' => 'admin.banner_home.index'
+        ],
+        [
+            'text' => 'Servicios',
+            'route' => 'admin.banner_service.index',
+            'icon' => '',
+            'can' => 'admin.banner_home.index'
+        ],
+        [
             'header' => 'INFORMACION GENERAL',
             'classes' => 'font-weight-bold',
             'can' => ['admin.certifications.index', 'admin.contact-us-general.index']

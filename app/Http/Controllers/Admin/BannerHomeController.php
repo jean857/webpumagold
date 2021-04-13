@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 
-class BannerController extends Controller
+class BannerHomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        return view('admin.home_banners.index');
+        return view('admin.banners.home.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class BannerController extends Controller
      */
     public function create()
     {
-        return view('admin.home_banners.create');
+        return view('admin.banners.home.create');
     }
 
     /**
@@ -35,6 +35,6 @@ class BannerController extends Controller
      */
     public function edit(Banner $home)
     {
-        return view('admin.home_banners.edit', compact('home'));
+        return view('admin.banners.home.edit', compact('home'));
     }
 }

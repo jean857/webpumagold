@@ -1,25 +1,46 @@
 @extends('web.layouts.layout')
 @section('content')
-    <!-- page-title -->
-    <div class="ttm-page-title-row">
-        <div class="ttm-page-title-row-inner">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <div class="page-title-heading">
-                            <h2 class="title">Nuestros servicios</h2>
-                        </div>
-                        <div class="breadcrumb-wrapper">
+    @if(!empty($banner))
+        <div class="ttm-page-title-row" style="background: url({{asset('storage/banners/'.$banner->image_source)}});">
+            <div class="ttm-page-title-row-inner">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="page-title-heading">
+                                <h2 class="title">Nuestros servicios</h2>
+                            </div>
+                            <div class="breadcrumb-wrapper">
                                 <span>
                                     <a title="Home" href="{{route('web.home.index')}}">Home</a>
                                 </span>
-                            <span>Servicios</span>
+                                <span>Servicios</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!-- page-title end-->
+    @else
+        <div class="ttm-page-title-row">
+            <div class="ttm-page-title-row-inner">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="page-title-heading">
+                                <h2 class="title">Nuestros servicios</h2>
+                            </div>
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Home" href="{{route('web.home.index')}}">Home</a>
+                                </span>
+                                <span>Servicios</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     <!--site-main start-->
     <div class="site-main">
 
