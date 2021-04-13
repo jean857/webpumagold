@@ -41,5 +41,6 @@ Route::resource('/banner/home', BannerController::class)->only(['index','create'
 Route::resource('/highlights', HighlightController::class)->only(['index','create','edit'])->names('admin.highlights');
 Route::resource('/contacts', ContactUsController::class)->only(['index'])->names('admin.contacts');
 Route::resource('/profile', ProfileController::class)->only(['index'])->names('admin.profile');
+Route::get('/profile/password', [ProfileController::class,'index_password'])->name('admin.profile.password.index');
 
 

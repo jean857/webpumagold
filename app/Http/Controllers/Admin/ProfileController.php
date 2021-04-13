@@ -11,4 +11,9 @@ class ProfileController extends Controller
     {
         return view('admin.profile.index');
     }
+
+    public function index_password()
+    {
+        return view('admin.profile.index_password');
+    }
 }

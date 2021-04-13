@@ -323,7 +323,7 @@ return [
         ],
         [
             'text' => 'change_password',
-            'url' => '#',
+            'route' => 'admin.profile.password.index',
             'icon' => 'fas fa-fw fa-lock',
         ],
 
