@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\HighlightController;
 use App\Http\Controllers\Admin\ContactUsController;
+use App\Http\Controllers\Admin\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,7 @@ Route::resource('/certifications', CertificationController::class)->only(['index
 Route::resource('/users', UserController::class)->only(['index','create','edit'])->names('admin.users');
 Route::resource('/banner/home', BannerController::class)->only(['index','create','edit'])->names('admin.banner_home');
 Route::resource('/highlights', HighlightController::class)->only(['index','create','edit'])->names('admin.highlights');
-Route::resource('/contacts', ContactUsController::class)->only(['index','create','edit'])->names('admin.contacts');
+Route::resource('/contacts', ContactUsController::class)->only(['index'])->names('admin.contacts');
+Route::resource('/profile', ProfileController::class)->only(['index'])->names('admin.profile');
 
 

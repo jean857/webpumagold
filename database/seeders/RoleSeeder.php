@@ -58,8 +58,6 @@ class RoleSeeder extends Seeder
 
         //Todo Creación de permisos - Contactanos
         Permission::create(['name' => 'admin.contacts.index'])->syncRoles([$role_admin, $role_editor]);
-        Permission::create(['name' => 'admin.contacts.create'])->syncRoles([$role_admin, $role_editor]);
-        Permission::create(['name' => 'admin.contacts.edit'])->syncRoles([$role_admin, $role_editor]);
 
         //Todo Creación de permisos - Usuarios
         Permission::create(['name' => 'admin.users.index'])->syncRoles([$role_admin]);

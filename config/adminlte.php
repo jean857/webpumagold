@@ -318,7 +318,7 @@ return [
         ],
         [
             'text' => 'profile',
-            'url' => '#',
+            'route' => 'admin.profile.index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
