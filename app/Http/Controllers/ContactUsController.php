@@ -31,7 +31,7 @@ class ContactUsController extends Controller
             $newContact->message = $request->post('message');
             if ($newContact->save()) {
                 $data = Contact::where('id', $newContact->id)->with([
-                    'service' => function ($query) {
+                    'services' => function ($query) {
                         $query->select(['id', 'name']);
                     }
                 ])->first()->toArray();

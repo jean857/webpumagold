@@ -9,7 +9,7 @@ class Contact extends Model
 {
     use HasFactory;
 
-    public function service()
+    public function services()
     {
         return $this->belongsTo(Service::class,'service','id');
     }

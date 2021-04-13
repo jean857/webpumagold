@@ -290,6 +290,17 @@ return [
             'can' => 'admin.highlights.index'
         ],
         [
+            'header' => 'CONTACTOS',
+            'classes' => 'font-weight-bold',
+            'can' => ['admin.contacts.index']
+        ],
+        [
+            'text' => 'Registro Contactos',
+            'route' => 'admin.contacts.index',
+            'icon' => '',
+            'can' => 'admin.contacts.index'
+        ],
+        [
             'header' => 'ADMIN. USUARIOS',
             'classes' => 'font-weight-bold',
             'can' => ['admin.users.index']
