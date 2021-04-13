@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Contactos')
 
 @section('content_header')
     <h1>Registro de Contactos</h1>
