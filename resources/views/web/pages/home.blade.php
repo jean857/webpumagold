@@ -49,74 +49,66 @@
             </section>
         @endif
     <!--features-section end-->
-        <!--about-section-->
-        <section class="ttm-row about-section bg-img11 ttm-bgcolor-grey clearfix">
+
+        <!--services-section-->
+        <section class="ttm-row services-section bg-img3 clearfix">
             <div class="container">
+                <!-- row -->
                 <div class="row">
-                    <div class="col-xl-5 col-lg-5 col-xs-12 ml-auto">
-                        <div class="ml_100 res-991-ml-0">
-                            <!-- section title -->
-                            <div class="section-title">
-                                <div class="title-header">
-                                    <h5>Sobre nosotros</h5>
-                                    <h2 class="title">Empleamos la última tecnología en los analisis quimicos</h2>
-                                </div>
-                                <div class="title-desc">Contamos con las certificaciones y Estándares de calidad
-                                    necesarios para la industria minera
-                                </div>
-                            </div><!-- section title end -->
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <!--featured-icon-box-->
-                                    <div class="featured-icon-box style1 icon-align-before-heading">
-                                        <div class="featured-icon">
-                                            <div
-                                                class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                                <i class="flaticon-lab-1"></i>
-                                            </div>
-                                        </div>
-                                        <div class="featured-content">
-                                            <div class="featured-title">
-                                                <h5>Los mejores<br>Laboratorios</h5>
-                                            </div>
-                                            <div class="featured-desc">
-                                                <p>Equipado y capacitados para trabajar</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- featured-icon-box end-->
-                                </div>
-                                <div class="col-sm-6">
-                                    <!--featured-icon-box-->
-                                    <div class="featured-icon-box style1 icon-align-before-heading">
-                                        <div class="featured-icon">
-                                            <div
-                                                class="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                                <i class="flaticon-dna"></i>
-                                            </div>
-                                        </div>
-                                        <div class="featured-content">
-                                            <div class="featured-title">
-                                                <h5> Resultados <br>confiables</h5>
-                                            </div>
-                                            <div class="featured-desc">
-                                                <p>Contamos con las certificaciones y estándares de calidad</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- featured-icon-box end-->
-                                </div>
+                    <div class="col-lg-6 col-md-8 m-auto">
+                        <!-- section-title -->
+                        <div class="section-title with-sep title-style-center_text">
+                            <div class="title-header">
+                                <h5>NUESTRAS ESPECIALIDADES</h5>
+                                <h2 class="title">Explore nuestros principales servicios</h2>
                             </div>
-                            <!--                            <div class="row">-->
-                            <!--                                <div class="col-lg-12">-->
-                            <!--                                    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-border ttm-btn-color-skincolor mt-15"-->
-                            <!--                                       href="#">What We Do!</a>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
+                            <div class="title-desc">Nuestro excelente equipo está listo para ser parte de su equipo para
+                                trabajar en las diferentes áreas
+                            </div>
+                        </div><!-- section-title end -->
+                    </div>
+                </div><!-- row end -->
+                <!-- row -->
+                <div class="row slick_slider"
+                     data-slick='{"slidesToShow": 3, "slidesToScroll": 3, "arrows":false, "autoplay":true, "centerMode":false, "centerPadding":0, "infinite":true, "initialSlide":0, "responsive": [{"breakpoint":870,"settings":{"slidesToShow": 2}} , {"breakpoint":525,"settings":{"slidesToShow": 1}}]}'>
+                    @foreach($services as $service)
+                        <div class="ttm-box-col-wrapper col-lg-4">
+                            <!-- featured-imagebox -->
+                            <div class="featured-imagebox featured-imagebox-services">
+                                <!-- featured-thumbnail -->
+                                <div class="featured-thumbnail">
+                                    <a href="{{route('web.service.index',$service->slug)}}">
+                                        @if(!empty($service->image_source))
+                                            <img class="img-fluid"
+                                                 src="{{url('storage/services/'. $service->image_source)}}" alt="image">
+                                        @else
+                                            <img class="img-fluid" src="{{url('images/services-01.jpg')}}" alt="image">
+                                        @endif
+                                    </a>
+                                </div><!-- featured-thumbnail end-->
+                                <div class="featured-content">
+                                    <div class="fea_con_right">
+                                        <div class="featured-title">
+                                            <h5><a href="{{route('web.service.index',$service->slug)}}">{{$service->name}}</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- featured-imagebox -->
                         </div>
-                    </div><!-- row end -->
+                    @endforeach
+                </div><!-- row end -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="mt-50 res-991-mt-30 text-center">
+                            <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-icon-btn-left ttm-btn-color-dark"
+                               href="{{route('web.contact-us.index')}}"><i class="flaticon-email"></i>Contáctanos</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!--about-section end-->
+        <!--services-section end-->
+
         @include('web.includes.partials.certifications')
     </div><!--site-main end-->
 
